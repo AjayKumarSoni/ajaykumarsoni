@@ -104,7 +104,7 @@ const router = createBrowserRouter([
       ]},
     ],
   },
-]);
+], { basename: '/ajaykumarsoni' });
 
 export default function AppRouter() {
   return <RouterProvider router={router} />;
