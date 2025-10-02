@@ -70,7 +70,7 @@ export default function AuthForm({ role, mode }) {
                 fullWidth 
               />
               <TextField 
-                label="Password =(1234567)" 
+                label="Password =(123456)" 
                 type="password" 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
