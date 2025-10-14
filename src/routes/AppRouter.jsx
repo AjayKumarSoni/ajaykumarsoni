@@ -39,6 +39,7 @@ import FacultySettings from '../pages/faculty/Settings.jsx';
 import FacultyNotifications from '../pages/faculty/Notifications.jsx';
 
 const createRouter = import.meta.env.PROD ? createHashRouter : createBrowserRouter;
+const basename = import.meta.env.PROD ? '/' : import.meta.env.BASE_URL;
 
 const router = createRouter([
   {
@@ -106,7 +107,7 @@ const router = createRouter([
       ]},
     ],
   },
-], { basename: import.meta.env.BASE_URL });
+], { basename });
 
 export default function AppRouter() {
   return <RouterProvider router={router} />;
