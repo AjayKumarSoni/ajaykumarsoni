@@ -1,20 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <script type="text/javascript">
-    // Redirect GitHub Pages 404 to index.html
-    var redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    if (redirect && redirect != location.href) {
-      history.replaceState(null, null, redirect);
-    }
-  </script>
-</head>
-<body>
-  <script type="text/javascript">
-    sessionStorage.redirect = location.href;
-    window.location.href = "/ajaykumarsoni/";
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/ajaykumarsoni/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nep-internship-platform</title>
+    <script type="module" crossorigin src="/ajaykumarsoni/assets/index-B-obJkB4.js"></script>
+    <link rel="stylesheet" crossorigin href="/ajaykumarsoni/assets/index-Dtn62Xmo.css">
+  </head>
+  <body>
+    <script>
+      // Ensure hash is present on GitHub Pages to work with HashRouter
+      (function() {
+        try {
+          var isGh = /\.github\.io$/.test(location.hostname);
+          var path = '/ajaykumarsoni/';
+          if (isGh && location.pathname === path && !location.hash) {
+            location.replace(path + '#/');
+          }
+        } catch (e) { /* noop */ }
+      })();
+    </script>
+    <div id="root"></div>
+  </body>
 </html>
