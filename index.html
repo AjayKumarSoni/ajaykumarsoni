@@ -7,6 +7,21 @@
     <title>nep-internship-platform</title>
   </head>
   <body>
+    <script>
+      // Ensure hash is present on GitHub Pages to work with HashRouter
+      (function() {
+        try {
+          var isGh = /\.github\.io$/.test(location.hostname);
+          var repo = 'ajaykumarsoni';
+          var repoPath = '/' + repo;
+          // If on GitHub Pages for this repo and there's no hash, redirect to repo root with hash
+          if (isGh && location.pathname.startsWith(repoPath) && !location.hash) {
+            // Always normalize to '/<repo>/#/'
+            location.replace(repoPath + '/#/');
+          }
+        } catch (e) { /* noop */ }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
