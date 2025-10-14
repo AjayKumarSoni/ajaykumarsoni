@@ -1,4 +1,4 @@
-import { createBrowserRouter, createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Landing from '../pages/Landing.jsx';
 import AuthForm from '../pages/auth/AuthForm.jsx';
 import ProtectedRoute from '../auth/ProtectedRoute.jsx';
@@ -38,10 +38,7 @@ import CommunicationHub from '../pages/faculty/Communication.jsx';
 import FacultySettings from '../pages/faculty/Settings.jsx';
 import FacultyNotifications from '../pages/faculty/Notifications.jsx';
 
-const createRouter = import.meta.env.PROD ? createHashRouter : createBrowserRouter;
-const basename = import.meta.env.PROD ? '/' : import.meta.env.BASE_URL;
-
-const router = createRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Landing />,
@@ -107,7 +104,7 @@ const router = createRouter([
       ]},
     ],
   },
-], { basename });
+], { basename: import.meta.env.BASE_URL });
 
 export default function AppRouter() {
   return <RouterProvider router={router} />;
